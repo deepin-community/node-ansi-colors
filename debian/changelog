@@ -1,0 +1,13 @@
+node-ansi-colors (4.1.1-2) unstable; urgency=medium
+
+  * add myself as uploader
+  * use debhelper compatibility level 13 (not 12)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 07 Aug 2020 20:20:29 +0200
+
+node-ansi-colors (4.1.1-1) unstable; urgency=medium
+
+  [ Kartik Kulkarni ]
+  * Initial release (Closes: #966615)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 01 Aug 2020 12:29:30 +0200

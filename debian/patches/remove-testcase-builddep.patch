@@ -1,0 +1,45 @@
+Description: Removed a module from test.js
+ Upstream uses node module decache which is not packaged
+ for debian thus it is commented out until the decache
+ has been packaged to debian. One of the testcases requiring
+ the module has been disabled for the same reason.
+Author: Kartik Kulkarni <kartik.koolks@gmail.com>
+
+--- a/test.js
++++ b/test.js
+@@ -2,7 +2,7 @@
+ 
+ require('mocha');
+ const assert = require('assert');
+-const decache = require('decache');
++// const decache = require('decache'); //removed for debian packaging, module not present in debian
+ const colors = require('./');
+ 
+ describe('ansi-colors', () => {
+@@ -123,7 +123,7 @@
+   describe('FORCE_COLOR', () => {
+     beforeEach(() => {
+       delete process.env.FORCE_COLOR;
+-      decache('./');
++      // decache('./'); // removed as module not present in debian
+     });
+ 
+     it('should be enabled if FORCE_COLOR is not set', () => {
+@@ -137,11 +137,17 @@
+       assert.equal(colors.enabled, true);
+     });
+ 
++/*
++   * Removed as test fails if cache is not cleared
++   * the module decache is not present in debian
++   * thus testcase is commented out.
++
+     it('should be disabled if FORCE_COLOR is set to 0', () => {
+       process.env.FORCE_COLOR = '0';
+       const colors = require('./');
+       assert.equal(colors.enabled, false);
+     });
++*/
+   });
+ 
+   describe('visible', () => {

@@ -1,0 +1,5 @@
+# Files in the source directory uses machine-compressed files under bench and examples
+# bench directory is not installed while examples can be ignored for now
+node-ansi-colors: source-is-missing
+
+
