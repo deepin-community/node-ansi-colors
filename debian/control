@@ -9,21 +9,22 @@ Testsuite: autopkgtest-pkg-nodejs
 Build-Depends:
  debhelper-compat (= 13),
  node-mocha <!nocheck>,
- nodejs,
- pkg-js-tools (>= 0.9.35),
-Standards-Version: 4.5.0
+ dh-sequence-nodejs,
+Standards-Version: 4.6.1
 Homepage: https://github.com/doowb/ansi-colors
 Vcs-Git: https://salsa.debian.org/js-team/node-ansi-colors.git
 Vcs-Browser: https://salsa.debian.org/js-team/node-ansi-colors
+Rules-Requires-Root: no
 
 Package: node-ansi-colors
 Architecture: all
 Depends:
- nodejs,
  ${misc:Depends},
-Description: Add ANSI colors to your text and symbols in the terminal
+Multi-Arch: foreign
+Description: add ANSI colors to your text and symbols in the terminal
  Ansi-colors is the official ansi styling library for gulp,
- and is used by hundreds of other projects, including mocha and enquirer.
+ and is used by hundreds of other projects,
+ including mocha and enquirer.
  .
  A faster drop-in replacement for chalk, kleur and turbocolor
  .

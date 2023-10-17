@@ -1,3 +1,7 @@
+# License is in Reference field (see bug#786450)
+missing-license-paragraph-in-dep5-copyright gpl-3\+ *
+missing-license-text-in-dep5-copyright GPL-3\+ *
+
 # Files in the source directory uses machine-compressed files under bench and examples
 # bench directory is not installed while examples can be ignored for now
 node-ansi-colors: source-is-missing
