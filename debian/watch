@@ -1,5 +1,9 @@
 version=4
+# check: uscan --report
+# update: gbp import-orig --upstream-vcs-tag=vX.Y.Z --uscan
+
 opts=\
-dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-ansi-colors-$1.tar.gz/ \
- https://github.com/doowb/ansi-colors/releases .*/archive/v?([\d\.]+).tar.gz
+filenamemangle=s/.*?(@ANY_VERSION@@ARCHIVE_EXT@)/@PACKAGE@-$1/,\
+dversionmangle=auto \
+https://github.com/doowb/ansi-colors/tags \
+.*?@ANY_VERSION@@ARCHIVE_EXT@ group

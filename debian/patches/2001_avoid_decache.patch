@@ -1,10 +1,14 @@
-Description: Removed a module from test.js
- Upstream uses node module decache which is not packaged
- for debian thus it is commented out until the decache
- has been packaged to debian. One of the testcases requiring
- the module has been disabled for the same reason.
+Description: avoid NodeJS module decache in testsuite
+ Upstream uses NodeJS module decache
+ which is not packaged for debian.
+ .
+ This patch comments out the use of decache,
+ since it is not packaged for Debian.
 Author: Kartik Kulkarni <kartik.koolks@gmail.com>
-
+Forwarded: not-needed
+Last-Update: 2021-12-06
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/test.js
 +++ b/test.js
 @@ -2,7 +2,7 @@
